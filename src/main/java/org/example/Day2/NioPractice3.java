@@ -49,7 +49,7 @@ public class NioPractice3 {
                     .collect(Collectors.groupingBy(path -> getExtension(path)));
 
 
-            groupedMap.forEach((String extension, List<Path> fileList)->{// String, List<Path>적지 않아도 타입 추론으로 알아낸다.
+            groupedMap.forEach((String extension, List<Path> fileList)->{// String, List<Path>적지 않아도 타입 추론으로 알아낸다. list의 stream은 변수가 1개인데, Map의 stream은 키/값이므로 변수가 2개이며 ()로 감싸주어야 함.
                 log.info("=== 확장자:[.{}] (총 {}개) ===",extension,fileList.size());
             });
         } catch (IOException e){
