@@ -1,15 +1,14 @@
-package org.example;
+package org.example.Day1;
 
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 @Slf4j
-public class NioPractice {
+public class NioPractice1 {
     public static void main(String[] args) {
         //Path: 인터페이스. 변수 타입
         //Paths: Path객체를 쉽게 만들기 위한 도구함. 함수의 모음집.
