@@ -17,8 +17,8 @@ public class GroupingPractice2 {
         Path startPath = Paths.get(".");
 
         try (Stream<Path> stream = Files.walk(startPath)){ //시작 지점부터 재귀적으로 탐색
-            Map<String, List<Path>> patientMap = stream
-                    .filter(path -> Files.isRegularFile(path)) //파일 아닌 것은 전부 걸러야 함.
+            Map<String, List<Path>> patientMap = stream    //전체 데이터(즉 스트림 전체에서)에서 필터링함. 
+                    .filter(path -> Files.isRegularFile(path)) //파일 아닌 것은 전부 걸러야 함. Path즉 스트림의 데이터는 Path라는 타입으로 되어 있는데 데이터 하나를 검사하는 것이다.
                     .collect(Collectors.groupingBy(path -> {
                         String fileName = path.getFileName().toString();
 
