@@ -1,4 +1,4 @@
-package org.example.Day2;
+package org.DICOMExample.Day2;
 
 import lombok.extern.slf4j.Slf4j;
 

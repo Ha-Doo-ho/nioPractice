@@ -1,4 +1,4 @@
-package org.example.Day3;
+package org.DICOMExample.Day3;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,7 +29,7 @@ public class GroupingPractice {
 
         try (Stream<Path> stream = Files.walk(startPath)){ //재귀적으로 파일을 탐색
             Map<String, List<Path>> patientMap = stream.filter(path -> Files.isRegularFile(path)) //목표는 환자 "파일"을 찾는 것임. 폴더를 찾는 것이 아님. 폴더는 isDirectory()
-                    .collect(Collectors.groupingBy(path -> { //collect() 스트림을 모음. Collectors.groupingBy() 분류해서 즉, 끼리끼리 모음.
+                    .collect(Collectors.groupingBy(path -> { //collect() 스트림을 모음. Collectors.groupingBy() 파일들을 분류함. 즉,끼리끼리 모음.
                         // path->{} 끼리끼리 모으기 위해 분류기준을 선정.
                         String fileName = path.getFileName().toString();
 
@@ -39,7 +39,7 @@ public class GroupingPractice {
                             return "Others";
                         }
                     }));
-            //Map<String, List<Path>> 이므로 매개변수 두개고 두개 이상부터 괄호로 묶음.
+            //Map<String, List<Path>> 이므로 매개변수 두개고 두개 이상부터 괄호로 묶음. (patientId, files) 이렇게 묶어야 함.
             patientMap.forEach((patientId, files)->{
                 log.info("===환자 ID: [{}] (총 {}개의 검사 파일) ===", patientId,files.size());
                 files.forEach(f->log.info(" ㄴ 파일: {}",f.getFileName()));
