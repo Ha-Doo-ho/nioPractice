@@ -23,7 +23,7 @@ public class NioPractice3 {
         if(lastDotIndex == -1 || lastDotIndex == 0) { //점(.)이 없거나 맨 앞에 있으면 "확장자없음" 처리
             return "noExtension";
         }
-        return fileName.substring(lastDotIndex + 1); // .뒤부터 확장자 이므로, lastDotIndex + 1을 함.
+        return fileName.substring(lastDotIndex + 1); // .뒤부터 확장자 이므로, lastDotIndex + 1을 함. "시작은 포함, 끝은 미포함"규칙
     }
 
 
