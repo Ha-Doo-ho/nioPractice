@@ -2,14 +2,13 @@ package org.DICOMExample.Day5.LambdaPractice;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Slf4j
-public class Lambda {
+public class LambdaDay1 {
     public static void main(String[] args) {
 
         /*람다식은 익명 객체!*/
@@ -80,6 +79,22 @@ public class Lambda {
         List<String> strings = Arrays.asList("apple", "banana", "cherry", "date");
         strings.sort((s1,s2)->s1.compareTo(s2));
         log.info("결과:{}",strings);
+
+
+        /// public class LambdaExample10 {
+        ///     public static void main(String[] args) {
+        ///         List<String> strings = Arrays.asList("hello", "world", "java");
+        ///         List<Character> firstChars = strings.stream()
+        ///                                             .map(new Function<String, Character>() {
+        ///                                                 @Override
+        ///                                                 public Character apply(String s) {
+        ///                                                     return s.charAt(0);
+        ///                                                 }
+        ///                                             })
+        ///                                             .collect(Collectors.toList());
+        ///         System.out.println(firstChars); // 출력: [h, w, j]
+        ///     }
+        /// }
 
     }
 }
