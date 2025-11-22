@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 public class NioPractice2 {
     public static void main(String[] args) {
         Path startpath = Path.of("./src"); //시작 위치  D:\NioPractice\nioPractice\src
+        //  .는 **"현재 작업 디렉토리(Current Working Directory)"**를 의미합니다.
 
         log.info("파일 탐색을 시작합니다. 탐색시작 파일:{}",startpath);
         try(Stream<Path> stream = Files.walk(startpath)) { //시작연산 -> 시작 위치부터 파일을 탐색하기 시작함.
