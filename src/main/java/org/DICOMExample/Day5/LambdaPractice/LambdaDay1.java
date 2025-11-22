@@ -44,7 +44,7 @@ public class LambdaDay1 {
         ///                                                    return n % 2 == 0;
         ///                                                }
         ///                                            })
-        ///                                            .collect(Collectors.toList());
+        ///                                            .collect(Collectors.toList()); //collect()는 Collector를 매개변수로 하는 스트림의 최종연산이다.
         ///         System.out.println(evenNumbers); // 출력: [2, 4, 6]
         ///     }
         /// }
